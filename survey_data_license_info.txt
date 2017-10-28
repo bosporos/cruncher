@@ -1,0 +1,3 @@
+
+Contains information from the Stack Overflow Annual Developer Survey 2017, which is made available
+here under the Open Database License (ODbL), whose full text is available at https://opendatacommons.org/licenses/odbl/1-0/.
