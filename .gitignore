@@ -1,1 +1,3 @@
 Cruncher.xcodeproj
+*.pyc
+old
