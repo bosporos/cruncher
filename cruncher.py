@@ -1,16 +1,20 @@
-from reader import reader
-from schema import schema
-from survey import survey
-from vparser import vparser
+from lib import reader
+from lib import schema
+from lib import survey
+from lib import vparser
+
+from lib.func import f_cgl 
 
 class cruncher:
     def __init__(self):
-        survey = survey()
-        vparser = vparser(
-            survey.data,
-            cannotSplinter={'Country','Gender'},
-            splinterPartial={}
+        self.survey = survey.survey()
+        self.vparser = vparser.vparser(
+            self.survey.data,
+            cannotSplinter={'Country'},
+            splinterPartial={'Gender': 'last'}
         )
 
 if __name__ == '__main__':
     instance = cruncher()
+    
+    f_cgl.cgl_perform(instance.survey.data, instance.vparser)

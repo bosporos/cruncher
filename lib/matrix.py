@@ -22,24 +22,23 @@ class matrix:
             iter = df
             # a list of coordinates
             queue = [coordinates]
-            while None in coordinates:
+            while None in queue[0]:
                 tqueue = []
                 for queued in queue:
-                    nindex = queue.index(None)
-                    variations = range(self.dimensions[nindex])
-                    for variation in variations:
-                        tmp = queued
+                    nindex = queued.index(None)
+                    for variation in range(self.dimensions[nindex]):
+                        tmp = queued[:]
                         tmp[nindex] = variation
                         tqueue.append(tmp)
                 queue = tqueue
             out = dict()
             for coordinatePoint in queue:
-                out[coordinatePoint] = self.data[coordinatePoint]
+                out[tuple(coordinatePoint)] = self.data[tuple(coordinatePoint)]
             return out
         else:
-            return self.data[coordinates]
+            return self.data[tuple(coordinates)]
     
-    def set(self, coordinates):
+    def set(self, coordinates, nv):
         coordinates = list(coordinates)
         cl = len(coordinates)
         if cl != self.space:
@@ -48,7 +47,7 @@ class matrix:
         if None in coordinates:
             print "You can't pass wild coordinates to matrix::set"
             quit()
-        return self.data[coordinates]
+        self.data[tuple(coordinates)] = nv
     
     def construct_(self, dimensions, elements):
         dimensions = list(dimensions) 
@@ -56,7 +55,9 @@ class matrix:
         dim = dimensions.pop()
         if len(dimensions) == 0:
             for element in range(dim):
-                dict[tuple(elements + [element])] = 0
+                ltmp = (elements + [element])
+                ltmp.reverse()
+                dict[tuple(ltmp)] = 0
         else:
             for element in range(dim):
                 tmp = self.construct_(dimensions, elements + [element])
