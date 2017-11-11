@@ -10,7 +10,7 @@ __CGL__ = {
         'Z': 'WantWorkLanguage'
     },
     'conf': {
-        'GENDER_RES': 'last'
+        'GENDER_RES': 'm/f/o'
     }
 }
 
@@ -35,8 +35,8 @@ def cgl_perform(data, vp):
     # }
     print "Chi Squared Calculation: [%f]" % cgl_stat_chi_squared
     global cgl_stat_chi_squared_p_value
-    cgl_stat_chi_squared_p_value = ChiSquaredTest(df=cgl_stat_matrix_df, chisquaredcalc = cgl_stat_chi_squared, significance = 0.01, heavy = True, sigfigs = 1000)
-    print "P value: [%f]" % cgl_stat_chi_squared_p_value
+    cgl_stat_chi_squared_p_value = ChiSquaredTest(df=cgl_stat_matrix_df, chisquaredcalc = cgl_stat_chi_squared, heavy = 10000)
+    print "P value:", cgl_stat_chi_squared_p_value
 
 class cgl_rp:
     def __init__(self, data, vp):

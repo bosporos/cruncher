@@ -11,7 +11,7 @@ class cruncher:
         self.vparser = vparser.vparser(
             self.survey.data,
             cannotSplinter={'Country'},
-            splinterPartial={'Gender': 'last'}
+            splinterPartial={'Gender': 'm/f/o'}
         )
 
 if __name__ == '__main__':

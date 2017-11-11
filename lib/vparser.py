@@ -27,7 +27,7 @@ class vparser:
             for field in datum.keys():
                 value = datum[field]
                 if self.pvalues[field]['type'] == 'nominal':
-                    if (field in cannotSplinter) or (splinterOn not in value):
+                    if (field in cannotSplinter):
                         self.attemptAddPValue(field, value)
                     else:
                         values = value.split(splinterOn)
@@ -60,7 +60,7 @@ class vparser:
             for field in datum:
                 if frequencies[field] != False:
                     value = datum[field]
-                    if (field in cannotSplinter) or (splinterOn not in value):
+                    if (field in cannotSplinter):
                         frequencies[field][value] += 1
                     else:
                         values = value.split(splinterOn)
@@ -86,6 +86,12 @@ class vparser:
             return values[0]
         elif mode == 'last':
             return values[-1]
+        elif mode == 'm/f/o':
+            vtmp = self.resolvePartialSplinter(values, 'last')
+            if vtmp == 'Male' or vtmp == 'Female':
+                return vtmp
+            else:
+                return 'Other'
     
     def constructBaseFromTemplate(self, template):
         for field in template.keys():
