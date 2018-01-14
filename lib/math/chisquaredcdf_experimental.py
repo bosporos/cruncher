@@ -9,7 +9,7 @@ def pdf(x,k):
     return 1/(2**(k/2) * mpmath.gamma(k/2)) * (x**(k/2-1)) * mpmath.exp(-x/2)
 
 def cdf(x,k): 
-    x,k = mpmath.mpf(x), mpmath.mpf(k) 
+    x,k = mpmath.mpf(x), mpmath.mpf(k)
     return mpmath.gammainc(k/2, 0, x/2, regularized=True)
 
 def cdf_via_quad(s,k):

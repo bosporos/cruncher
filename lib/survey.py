@@ -9,7 +9,6 @@ class survey:
         print "Attempting to open survey data..."
         self.reader = reader(CRUNCHER_PATHS['PUBLIC'])
         print "Success!"
-        print
         
         for name in CRUNCHER_FIELDS:
             print "Extracting Field: [%s], index: [%i]" % (name, self.schema.getIndexOfField(name))

@@ -11,4 +11,4 @@ def ChiSquaredTest(df, chisquaredcalc, heavy = 53):
 
 if __name__ == "__main__":
     # Works
-    print ChiSquaredTest(df=4, chisquaredcalc=51.6, significance=0.05, heavy = 10000)
+    print ChiSquaredTest(df=4, chisquaredcalc=51.6, heavy = 10000)

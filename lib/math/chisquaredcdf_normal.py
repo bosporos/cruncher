@@ -58,7 +58,7 @@ def G_(s, x):
         print "Not yet possible: Cannot do upper incomplete gamma function for s<=0"
         quit()
     base = G1_(mp.fsub(s, 1))
-    epow = mp.power(mp.e, mp.fneg(x))
+    epow = mp.exp(mp.fneg(x))
     summus = mp.fsum([mp.power(x,k)/mp.factorial(k) for k in range(s)])
     return mp.fprod([base, epow, summus])
 

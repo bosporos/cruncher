@@ -15,10 +15,10 @@ CRUNCHER_FIELDS = {
 DISTRIBUTE_SPLIT_FIELDS = False
 
 DEBUG = {
-    'DEBUG_READ_SCHEMA': False,
-    'DEBUG_READ_PUBLIC': False,
-    'DEBUG_MAKE_VALUES_SCHEMA': True,
-    'DEBUG_MAKE_VALUES_FREQUENCIES': False
+    'DEBUG_READ_SCHEMA': False, # Prints all the questions
+    'DEBUG_READ_PUBLIC': False, # Breaks execution ????
+    'DEBUG_MAKE_VALUES_SCHEMA': False,
+    'DEBUG_MAKE_VALUES_FREQUENCIES': False # Dumps all the frequencies of all the data's possible values
 }
 
 def numerify(str):

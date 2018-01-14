@@ -1,1 +1,3 @@
 Fredrik Johansson and others. mpmath: a Python library for arbitrary-precision floating-point arithmetic (version 0.18), December 2013. http://mpmath.org/.
+
+@DSM, https://stackoverflow.com/questions/6298105/precision-of-cdf-in-scipy-stats

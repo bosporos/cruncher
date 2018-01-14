@@ -80,6 +80,7 @@ class vparser:
             print frequencies
         for key in frequencies.keys():
             self.pvalues[key]['frequencies'] = frequencies[key]
+        self.frequencies = frequencies
     
     def resolvePartialSplinter(self, values, mode):
         if mode == 'first':

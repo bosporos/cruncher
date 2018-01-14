@@ -23,9 +23,9 @@ def cgl_perform(data, vp):
     
     t_chisqrd = chisquaredgen(m_actual, m_expected)
 
-    # flag True to print DF value
     global cgl_stat_matrix_df
     global cgl_stat_chi_squared
+    # flag debug=True to print DF value
     (cgl_stat_matrix_df, cgl_stat_chi_squared) = t_chisqrd.calculate(debug=True)
     # Should be Degrees Of Freedom: 16864
     # {'phi_coefficient': 0.6871276478410416,
